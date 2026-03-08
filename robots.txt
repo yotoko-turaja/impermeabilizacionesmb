@@ -1,0 +1,9 @@
+# Permitir a todos los robots rastrar el sitio
+User-agent: *
+Allow: /
+
+# Desalentar indexación de ciertos archivos
+Disallow: /functions/
+
+# Sitemap
+Sitemap: https://impermeabilizacionesmb.com/sitemap.xml

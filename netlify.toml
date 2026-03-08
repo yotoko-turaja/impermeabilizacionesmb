@@ -1,0 +1,46 @@
+# Configuración de Netlify
+
+# Directorio de publicación
+[build]
+  publish = "."
+  command = "echo 'Sitio estático listo'"
+
+# Redirects - Enviar errores 404 al index
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers personalizados
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Headers para archivos CSS
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Content-Type = "text/css; charset=utf-8"
+    Cache-Control = "public, max-age=31536000"
+
+# Headers para archivos JS
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Content-Type = "text/javascript; charset=utf-8"
+    Cache-Control = "public, max-age=31536000"
+
+# Headers para sitemap.xml
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    X-Content-Type-Options = "nosniff"
+
+# Configuración de formas
+[functions]
+  directory = "functions"

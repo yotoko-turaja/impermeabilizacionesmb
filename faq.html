@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Preguntas Frecuentes - ImpermeabilizacionesMB. Resuelve tus dudas sobre nuestros servicios de impermeabilización.">
+  <meta name="keywords" content="preguntas frecuentes, FAQ, impermeabilización, dudas">
+  <title>Preguntas Frecuentes | ImpermeabilizacionesMB</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .faq-section {
+      padding: 60px 0;
+    }
+    
+    .faq-item {
+      background: white;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .faq-question {
+      padding: 20px 30px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: #333;
+      background: #f9f9f9;
+      transition: background 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      background: #f0f0f0;
+    }
+    
+    .faq-question.active {
+      background: #0066cc;
+      color: white;
+    }
+    
+    .faq-toggle {
+      font-size: 1.5em;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-toggle.active {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 30px;
+    }
+    
+    .faq-answer.active {
+      max-height: 500px;
+      padding: 20px 30px;
+    }
+    
+    .faq-answer p {
+      color: #666;
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .faq-category {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      border-left: 4px solid #0066cc;
+    }
+    
+    .faq-category h3 {
+      color: #0066cc;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER / NAVEGACIÓN -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">
+        <img src="img/logo.jpeg" alt="ImpermeabilizacionesMB Logo" class="logo-img">
+        <span>ImpermeabilizacionesMB</span>
+      </a>
+      <button class="menu-toggle">☰</button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="trabajos.html">Trabajos</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner" id="ctaBanner">
+    <div class="cta-banner-content">
+      <div class="cta-banner-text">
+        <strong>🎯 ¿Necesitas Impermeabilización?</strong>
+        <span>Llama ahora y obtén tu presupuesto GRATIS en 5 minutos</span>
+      </div>
+      <a href="tel:+34601506850" class="cta-banner-button">Llamar Ahora</a>
+      <button class="cta-banner-close" onclick="document.getElementById('ctaBanner').classList.add('hidden')">✕</button>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <section style="padding: 20px;">
+    <div class="container breadcrumb">
+      <a href="index.html">Inicio</a>
+      <span>/</span>
+      <span>Preguntas Frecuentes</span>
+    </div>
+  </section>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <h1>Preguntas Frecuentes</h1>
+      <p>Resuelve tus dudas sobre nuestros servicios de impermeabilización</p>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Respuestas a tus <span class="highlight">Preguntas</span></h2>
+      
+      <!-- PREGUNTAS GENERALES -->
+      <div style="margin-bottom: 50px;">
+        <h3 style="color: #0066cc; margin-bottom: 30px;">Preguntas Generales</h3>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Cuántos años de experiencia tiene ImpermeabilizacionesMB?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>ImpermeabilizacionesMB tiene más de 10 años de experiencia en el sector de la impermeabilización. Durante este tiempo hemos completado cientos de proyectos exitosos en piscinas, azoteas y depósitos, ganando la confianza de nuestros clientes.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Están certificados y asegurados?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, contamos con todas las certificaciones necesarias y estamos completamente asegurados. Nuestros técnicos cumplen con las normas internacionales de calidad y seguridad en todos nuestros trabajos.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Ofrecen garantía en sus servicios?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, ofrecemos garantía de hasta 10 años en nuestros servicios de impermeabilización, dependiendo del tipo de trabajo y materiales utilizados. Consulta las condiciones específicas con nuestro equipo.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Cómo puedo solicitar un presupuesto?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Es muy sencillo. Puedes contactarnos de varias formas: llamando al +34 601 506 850, enviando un email a impermeabilizacionesmb@hotmail.com, o rellenando el formulario en nuestra página de contacto. Los presupuestos son gratuitos y sin compromiso.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREGUNTAS SOBRE PISCINAS -->
+      <div style="margin-bottom: 50px;">
+        <h3 style="color: #0066cc; margin-bottom: 30px;">Impermeabilización de Piscinas</h3>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Qué ventajas tiene la membrana líquida de poliuretano?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Las membranas líquidas de poliuretano ofrecen múltiples ventajas: máxima elasticidad, adaptabilidad a cualquier forma de la piscina, excelente adherencia, resistencia a los rayos UV, durabilidad de hasta 15 años, y forma una barrera homogénea sin juntas. Es ideal para piscinas de cualquier tamaño y complejidad.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Cuánto tiempo dura el proceso de impermeabilización con poliuretano?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>El tiempo depende del tamaño de la piscina y las condiciones climáticas. Generalmente, la aplicación toma 2-4 días y el curado completo entre 7-14 días. Durante el curado, la piscina no puede usarse. Realizamos una evaluación previa para darte un cronograma exacto.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Cuándo se puede usar la piscina después de aplicar poliuretano?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Es importante respetar el tiempo de curado completo, generalmente 14 días. Después de este tiempo, se puede llenar la piscina y usarla sin problemas. El poliuretano se endurece completamente formando una barrera impermeable duradera. Te proporcionaremos instrucciones precisas y específicas para tu proyecto.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Es resistente el poliuretano a los químicos de la piscina?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, las membranas de poliuretano son altamente resistentes a los químicos utilizados en piscinas como cloro y otros desinfectantes. La barrera se mantiene íntegra y no se degrada con el uso normal y el mantenimiento adecuado de la piscina.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREGUNTAS SOBRE AZOTEAS -->
+      <div style="margin-bottom: 50px;">
+        <h3 style="color: #0066cc; margin-bottom: 30px;">Impermeabilización de Azoteas</h3>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Cómo sé si mi azotea necesita impermeabilización?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Algunos indicios de que tu azotea necesita impermeabilización son: goteras interiores, manchas de humedad, grietas visibles, o cuando ya ha pasado más de 15-20 años desde la última intervención. Podemos hacer una inspección gratuita para diagnosticar el estado.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Interfiere la impermeabilización con la vida normal del edificio?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Nuestro equipo trabaja de manera organizada para minimizar las molestias. Generalmente realizamos el trabajo durante horarios accesibles y con acceso controlado a la zona de trabajo. La vida normal del edificio se ve poco afectada.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Se puede impermeabilizar una azotea en invierno?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Algunos materiales pueden aplicarse en invierno, pero las condiciones óptimas son primavera y verano cuando hace más calor y hay menos humedad. En invierno es posible, pero con precauciones adicionales. Consúltanos para tu caso específico.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREGUNTAS SOBRE DEPÓSITOS -->
+      <div style="margin-bottom: 50px;">
+        <h3 style="color: #0066cc; margin-bottom: 30px;">Impermeabilización de Depósitos</h3>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Pueden impermeabilizar depósitos de agua potable?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, realizamos impermeabilización de depósitos de agua potable. Utilizamos materiales certificados y seguros para consumo humano, cumpliendo todas las normativas sanitarias internacionales.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Necesito vaciar completamente el depósito?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, para la mayoría de trabajos de impermeabilización es necesario que el depósito esté completamente vacío y limpio. Esto asegura una aplicación correcta del material y un resultado duradero.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- PREGUNTAS SOBRE PRESUPUESTO Y PAGOS -->
+      <div style="margin-bottom: 50px;">
+        <h3 style="color: #0066cc; margin-bottom: 30px;">Presupuesto y Pagos</h3>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Cuánto cuesta en promedio un trabajo?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Los precios varían significativamente según el tipo de servicio, tamaño del área y complejidad del trabajo. Desde pequeñas reparaciones hasta proyectos grandes. El único modo de darte un precio exacto es haciendo una evaluación personalizada. Ofrecemos presupuestos gratuitos sin compromisos.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Aceptan formas de pago diferentes?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí, aceptamos múltiples formas de pago: transferencia bancaria, efectivo y otros métodos. Podemos negociar planes de pago según tus necesidades para proyectos grandes.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>¿Hay cargos ocultos o adicionales?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>No, nuestros presupuestos son claros y detallan todos los costes. Lo que ves en el presupuesto es lo que pagas. No hay sorpresas ni cargos ocultos. Si surgen cambios durante el trabajo, te lo comunicamos inmediatamente.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACTO CTA -->
+      <div style="text-align: center; margin-top: 50px; padding: 40px; background: #f5f5f5; border-radius: 8px;">
+        <h3>¿No encontraste tu pregunta?</h3>
+        <p style="color: #666; margin-bottom: 20px;">Contacta directamente con nuestro equipo de expertos</p>
+        <div class="contact-buttons">
+          <a href="tel:+34601506850" class="contact-button"><span class="icon">📞</span> Llamar</a>
+          <a href="mailto:impermeabilizacionesmb@hotmail.com" class="contact-button"><span class="icon">📧</span> Email</a>
+          <a href="contacto.html" class="contact-button"><span class="icon">💬</span> Formulario</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo-section">
+        <img src="img/logo.jpeg" alt="ImpermeabilizacionesMB Logo" class="footer-logo">
+        <h3>ImpermeabilizacionesMB</h3>
+        <p>Expertos en impermeabilización desde 2016</p>
+      </div>
+      <div class="footer-section">
+        <h3>Sobre Nosotros</h3>
+        <p>ImpermeabilizacionesMB es una empresa dedicada a ofrecer soluciones profesionales de impermeabilización con más de 10 años de experiencia.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p>📞 <a href="tel:+34601506850">+34 601 506 850</a></p>
+        <p>📧 <a href="mailto:impermeabilizacionesmb@hotmail.com">impermeabilizacionesmb@hotmail.com</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Información Legal</h3>
+        <p><a href="privacidad.html">Política de Privacidad</a></p>
+        <p><a href="cookies.html">Política de Cookies</a></p>
+        <p><a href="accesibilidad.html">Declaración de Accesibilidad</a></p>
+        <p><a href="aviso-legal.html">Aviso Legal</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ImpermeabilizacionesMB. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/34601506850?text=Hola%20ImpermeabilizacionesMB%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20vuestros%20servicios" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">💬</a>
+
+  <script src="js/script.js"></script>
+  <script>
+    function toggleFAQ(element) {
+      const question = element;
+      const answer = element.nextElementSibling;
+      const toggle = question.querySelector('.faq-toggle');
+      
+      // Cerrar todas las otras preguntas
+      document.querySelectorAll('.faq-question').forEach(q => {
+        if (q !== question) {
+          q.classList.remove('active');
+          q.nextElementSibling.classList.remove('active');
+          q.querySelector('.faq-toggle').classList.remove('active');
+        }
+      });
+      
+      // Toggle la actual
+      question.classList.toggle('active');
+      answer.classList.toggle('active');
+      toggle.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

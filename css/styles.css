@@ -1,0 +1,1037 @@
+/* ==================== ESTILOS GLOBALES ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* ==================== HEADER/NAVEGACIÓN ==================== */
+header {
+  background: linear-gradient(135deg, #0099dd 0%, #0077bb 100%);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  max-width: 100px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  display: block;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+nav a.active {
+  background-color: #ff6b35;
+  border-radius: 4px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* ==================== CTA BANNER SUPERIOR ==================== */
+.cta-banner {
+  background: linear-gradient(135deg, #ff6b35 0%, #e55a24 50%, #ff4757 100%);
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  position: sticky;
+  top: 72px;
+  z-index: 998;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cta-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cta-banner-text {
+  font-size: 16px;
+  font-weight: 600;
+  flex: 1;
+  text-align: left;
+}
+
+.cta-banner-text strong {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cta-banner-button {
+  background-color: white;
+  color: #ff6b35;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  animation: pulse-btn 2s infinite;
+}
+
+@keyframes pulse-btn {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.cta-banner-button:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+  animation: none;
+}
+
+.cta-banner-button:active {
+  transform: scale(0.98);
+}
+
+.cta-banner-button::before {
+  content: "☎️";
+  font-size: 18px;
+}
+
+.cta-banner-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-banner-close:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(90deg);
+}
+
+.cta-banner.hidden {
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+  color: #ff6b35;
+}
+
+.footer-section p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.footer-section a {
+  color: #ff6b35;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+/* ==================== FOOTER LOGO ==================== */
+.footer-logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-logo-section img {
+  height: 80px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-logo-section img:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.footer-logo-section p {
+  font-size: 13px;
+  color: #999;
+  margin-top: 10px;
+}
+
+/* ==================== FOOTER BOTTOM ==================== */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 13px;
+  color: #999;
+}
+
+/* ==================== CONTENEDOR PRINCIPAL ==================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+  background: linear-gradient(135deg, #0099dd 0%, #0077bb 100%);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ==================== BOTONES ==================== */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #00ccff;
+  color: #0077bb;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #00bbee;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 204, 255, 0.3);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #0077bb;
+  border: 2px solid #0077bb;
+}
+
+.btn-secondary:hover {
+  background-color: #f0f0f0;
+}
+
+/* ==================== SECCIONES ==================== */
+section {
+  padding: 60px 20px;
+}
+
+section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #0077bb;
+}
+
+section h2 .highlight {
+  color: #00ccff;
+}
+
+/* ==================== GRID DE SERVICIOS ==================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card, .work-card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.work-card {
+  background-size: cover;
+  background-position: center;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  position: relative;
+  padding: 25px !important;
+}
+
+.service-card:hover, .work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3, .work-card h3 {
+  color: #0077bb;
+  margin: 15px 0;
+  font-size: 22px;
+}
+
+.work-card h3 {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.service-card .icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.service-card p, .work-card p {
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.work-card p {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
+.service-featured {
+  background-size: cover !important;
+  background-position: center !important;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  position: relative;
+  padding: 25px !important;
+}
+
+.service-featured h3 {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.service-featured p {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.service-featured .btn {
+  background-color: #ff6b35 !important;
+  color: white !important;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.service-featured .btn:hover {
+  background-color: #e55a24 !important;
+}
+
+/* ==================== FORMULARIO ==================== */
+.contact-form {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.form-group.checkbox input {
+  width: auto;
+  margin-top: 4px;
+}
+
+.form-group.checkbox label {
+  margin: 0;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.form-message {
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.form-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  display: block;
+}
+
+.form-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  display: block;
+}
+
+/* ==================== TESTIMONIOS ==================== */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.testimonial {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  border-left: 5px solid #ff6b35;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial .stars {
+  color: #ff6b35;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.testimonial p {
+  margin-bottom: 15px;
+  font-style: italic;
+  color: #666;
+}
+
+.testimonial .author {
+  font-weight: 600;
+  color: #333;
+}
+
+/* ==================== SECCIÓN LLAMADA A ACCIÓN ==================== */
+.cta-section {
+  background: linear-gradient(135deg, #0066cc 0%, #004a99 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 0;
+}
+
+.cta-section h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==================== ABOUT SECTION ==================== */
+.about-content {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.about-content h3 {
+  color: #0066cc;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.about-content h3:first-child {
+  margin-top: 0;
+}
+
+.about-content p {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.about-content ul {
+  margin: 20px 0 20px 20px;
+  color: #666;
+}
+
+.about-content li {
+  margin-bottom: 10px;
+}
+
+/* ==================== BREADCRUMB ==================== */
+.breadcrumb {
+  padding: 20px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.breadcrumb a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  margin: 0 8px;
+}
+
+/* ==================== BOTONES CONTACTO ==================== */
+.contact-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  background: white;
+  color: #0066cc;
+  border: 2px solid #0066cc;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #0066cc;
+  color: white;
+}
+
+.contact-button .icon {
+  font-size: 18px;
+}
+
+/* ==================== ANIMACIONES WHATSAPP ==================== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== BOTÓN FLOTANTE WHATSAPP ==================== */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+  animation: float 3s ease-in-out infinite, slideIn 0.6s ease-out;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.whatsapp-float.pulse {
+  animation: float 3s ease-in-out infinite, pulse 2s infinite, slideIn 0.6s ease-out;
+}
+
+.whatsapp-float:hover {
+  background-color: #20ba5a;
+  transform: scale(1.2) rotate(-10deg);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+.whatsapp-float:active {
+  transform: scale(0.95) rotate(0deg);
+}
+
+.whatsapp-float.hidden {
+  opacity: 0;
+  transform: translateY(100px);
+  pointer-events: none;
+  animation: none;
+}
+
+/* ==================== RESPONSIVE WHATSAPP ==================== */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 26px;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.15) rotate(-10deg);
+  }
+}
+
+/* ==================== RESPONSIVE CTA BANNER ==================== */
+@media (max-width: 768px) {
+  .cta-banner {
+    top: 65px;
+    padding: 10px 15px;
+  }
+  
+  .cta-banner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .cta-banner-text {
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .cta-banner-text strong {
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+  
+  .cta-banner-button {
+    font-size: 13px;
+    padding: 8px 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .cta-banner-close {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: #004a99;
+    width: 100%;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+
+  .services-grid, .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+  }
+
+  .contact-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 40px 15px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-logo-section img {
+    height: 60px;
+    max-width: 120px;
+  }
+
+  .footer-logo-section h3 {
+    font-size: 18px;
+  }
+
+  nav a {
+    font-size: 16px;
+    padding: 15px 0;
+  }
+}
+
+/* ==================== BANNER DE COOKIES ==================== */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  color: white;
+  padding: 20px;
+  z-index: 9999;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.cookie-text {
+  flex: 1;
+}
+
+.cookie-text p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.cookie-text a {
+  color: #ff6b35;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cookie-text a:hover {
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.btn-accept {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-accept:hover {
+  background-color: #0052a3;
+}
+
+.btn-reject {
+  background-color: #666;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-reject:hover {
+  background-color: #555;
+}
+
+/* Responsive para cookies */
+@media (max-width: 768px) {
+  .cookie-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cookie-buttons {
+    width: 100%;
+  }
+
+  .btn-accept,
+  .btn-reject {
+    flex: 1;
+  }
+}

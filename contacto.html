@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto - ImpermeabilizacionesMB. Solicita presupuesto o ponte en contacto con nosotros.">
+  <meta name="keywords" content="contacto, presupuesto, información">
+  <title>Contacto | ImpermeabilizacionesMB</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- HEADER / NAVEGACIÓN -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="logo">
+        <img src="img/logo.jpeg" alt="ImpermeabilizacionesMB Logo" class="logo-img">
+        <span>ImpermeabilizacionesMB</span>
+      </a>
+      <button class="menu-toggle">☰</button>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="trabajos.html">Trabajos</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contacto.html" class="active">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner" id="ctaBanner">
+    <div class="cta-banner-content">
+      <div class="cta-banner-text">
+        <strong>🎯 ¿Necesitas Impermeabilización?</strong>
+        <span>Llama ahora y obtén tu presupuesto GRATIS en 5 minutos</span>
+      </div>
+      <a href="tel:+34601506850" class="cta-banner-button">Llamar Ahora</a>
+      <button class="cta-banner-close" onclick="document.getElementById('ctaBanner').classList.add('hidden')">✕</button>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <section style="padding: 20px;">
+    <div class="container breadcrumb">
+      <a href="index.html">Inicio</a>
+      <span>/</span>
+      <span>Contacto</span>
+    </div>
+  </section>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <h1>Ponte en Contacto</h1>
+      <p>¿Tienes un proyecto de impermeabilización? Contacta con nosotros para obtener tu presupuesto</p>
+    </div>
+  </section>
+
+  <!-- INFORMACIÓN DE CONTACTO -->
+  <section>
+    <div class="container">
+      <h2>Formas de <span class="highlight">Contactarnos</span></h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon">📞</div>
+          <h3>Llamadas</h3>
+          <p><a href="tel:+34601506850" class="btn" style="width: 100%; margin-top: 10px;">+34 601 506 850</a></p>
+        </div>
+        <div class="service-card">
+          <div class="icon">📧</div>
+          <h3>Email</h3>
+          <p><a href="mailto:impermeabilizacionesmb@hotmail.com" class="btn" style="width: 100%; margin-top: 10px;">Enviar Email</a></p>
+        </div>
+        <div class="service-card">
+          <div class="icon">⏰</div>
+          <h3>Horarios</h3>
+          <p><strong>De lunes a viernes</strong><br>8:00 - 18:00<br><strong>Sábados</strong><br>9:00 - 15:00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE CONTACTO -->
+  <section>
+    <div class="container">
+      <h2>Formulario de <span class="highlight">Contacto</span></h2>
+      <form class="contact-form" name="contacto" method="POST" netlify netlify-honeypot="bot-field" onsubmit="validateForm(event)">
+        <input type="hidden" name="form-name" value="contacto">
+        <p hidden><input type="text" name="bot-field"></p>
+        
+        <div id="form-message" class="form-message"></div>
+        
+        <div class="form-group">
+          <label for="name">Nombre Completo *</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="tu.email@ejemplo.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Teléfono</label>
+          <input type="tel" id="phone" name="phone" placeholder="+34 601 506 850">
+        </div>
+
+        <div class="form-group">
+          <label for="service">Tipo de Servicio *</label>
+          <select id="service" name="service" required>
+            <option value="">-- Selecciona un servicio --</option>
+            <option value="Piscinas">Impermeabilización de Piscinas</option>
+            <option value="Azoteas">Impermeabilización de Azoteas</option>
+            <option value="Depósitos">Impermeabilización de Depósitos</option>
+            <option value="Otro">Otro Servicio</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensaje *</label>
+          <textarea id="message" name="message" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+        </div>
+
+        <div class="form-group checkbox">
+          <input type="checkbox" id="privacy" name="privacy" required>
+          <label for="privacy">He leído y acepto la <a href="privacidad.html" target="_blank">Política de Privacidad</a></label>
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- LLAMADA A ACCIÓN -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>¿Todavía tienes dudas?</h2>
+      <p>Nuestro equipo está disponible para resolver todas tus preguntas</p>
+      <div class="contact-buttons">
+        <a href="tel:+34601506850" class="contact-button"><span class="icon">📞</span> Llamar</a>
+        <a href="mailto:impermeabilizacionesmb@hotmail.com" class="contact-button"><span class="icon">📧</span> Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo-section">
+        <img src="img/logo.jpeg" alt="ImpermeabilizacionesMB Logo" class="footer-logo">
+        <h3>ImpermeabilizacionesMB</h3>
+        <p>Expertos en impermeabilización desde 2016</p>
+      </div>
+      <div class="footer-section">
+        <h3>Sobre Nosotros</h3>
+        <p>ImpermeabilizacionesMB es una empresa dedicada a ofrecer soluciones profesionales de impermeabilización con más de 10 años de experiencia.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p>📞 <a href="tel:+34601506850">+34 601 506 850</a></p>
+        <p>📧 <a href="mailto:impermeabilizacionesmb@hotmail.com">impermeabilizacionesmb@hotmail.com</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Información Legal</h3>
+        <p><a href="privacidad.html">Política de Privacidad</a></p>
+        <p><a href="cookies.html">Política de Cookies</a></p>
+        <p><a href="accesibilidad.html">Declaración de Accesibilidad</a></p>
+        <p><a href="aviso-legal.html">Aviso Legal</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ImpermeabilizacionesMB. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/34601506850?text=Hola%20ImpermeabilizacionesMB%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20vuestros%20servicios" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">💬</a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
