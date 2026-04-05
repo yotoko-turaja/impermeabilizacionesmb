@@ -88,9 +88,7 @@
   <section>
     <div class="container">
       <h2>Formulario de <span class="highlight">Contacto</span></h2>
-      <form class="contact-form" name="contacto" method="POST" netlify netlify-honeypot="bot-field" onsubmit="validateForm(event)">
-        <input type="hidden" name="form-name" value="contacto">
-        <p hidden><input type="text" name="bot-field"></p>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="validateForm(event)">
         
         <div id="form-message" class="form-message"></div>
         
@@ -130,7 +128,7 @@
           <label for="privacy">He leído y acepto la <a href="privacidad.html" target="_blank">Política de Privacidad</a></label>
         </div>
 
-        <button type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
+        <button type="submit" id="submit-btn" class="btn" style="width: 100%;">Enviar Mensaje</button>
       </form>
     </div>
   </section>
