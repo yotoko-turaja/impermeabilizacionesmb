@@ -1,0 +1,23 @@
+{
+  "name": "impermeabilizacionesmb",
+  "version": "1.0.0",
+  "description": "Sitio web profesional para ImpermeabilizacionesMB",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo \"Sitio estático - Sirve los archivos como está\"",
+    "build": "echo \"No se requiere build - Es un sitio estático\""
+  },
+  "keywords": [
+    "impermeabilización",
+    "piscinas",
+    "azoteas",
+    "depósitos",
+    "construcción"
+  ],
+  "author": "ImpermeabilizacionesMB",
+  "license": "Privado",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tuusuario/impermeabilizacionesmb.git"
+  }
+}
