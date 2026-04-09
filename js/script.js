@@ -1,37 +1,61 @@
-// ==================== VALIDACIÓN DE FORMULARIO ====================
+// ==================== FORMULARIO FORMSPREE ====================
 function validateForm(event) {
-  const form = event.target;
+  event.preventDefault();
+
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
   const privacy = document.getElementById('privacy').checked;
 
   if (!name || !email || !message) {
-    event.preventDefault();
-    showMessage('Por favor, completa todos los campos requeridos', 'error');
+    showMessage('Por favor, completa todos los campos requeridos.', 'error');
     return false;
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    event.preventDefault();
-    showMessage('Por favor, ingresa un email válido', 'error');
+    showMessage('Por favor, ingresa un email válido.', 'error');
     return false;
   }
 
   if (!privacy) {
-    event.preventDefault();
-    showMessage('Debes aceptar la Política de Privacidad', 'error');
+    showMessage('Debes aceptar la Política de Privacidad.', 'error');
     return false;
   }
 
-  // Si es un formulario de Netlify, lo dejamos pasar
-  // Si no, mostramos mensaje de éxito
-  if (!form.hasAttribute('netlify')) {
-    showMessage('¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.', 'success');
-  }
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const formData = new FormData(form);
 
-  return true;
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando...';
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if (response.ok) {
+      showMessage('✅ ¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.', 'success');
+      form.reset();
+    } else {
+      return response.json().then(data => {
+        if (data.errors) {
+          showMessage('❌ Error: ' + data.errors.map(e => e.message).join(', '), 'error');
+        } else {
+          showMessage('❌ Error al enviar el mensaje. Inténtalo de nuevo.', 'error');
+        }
+      });
+    }
+  })
+  .catch(() => {
+    showMessage('❌ Error de conexión. Inténtalo de nuevo más tarde.', 'error');
+  })
+  .finally(() => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Enviar Mensaje';
+  });
 }
 
 function showMessage(message, type) {
@@ -40,6 +64,7 @@ function showMessage(message, type) {
     messageDiv.textContent = message;
     messageDiv.className = 'form-message ' + type;
     messageDiv.style.display = 'block';
+    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
 
