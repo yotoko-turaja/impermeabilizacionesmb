@@ -88,9 +88,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('nav ul');
 
-  if (menuToggle) {
+  if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
+      const expanded = navMenu.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(expanded));
+      menuToggle.setAttribute('aria-label', expanded ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
     });
   }
 
@@ -98,8 +100,21 @@ document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('nav a');
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
-      navMenu.classList.remove('active');
+      if (navMenu) navMenu.classList.remove('active');
+      if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+      }
     });
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && navMenu && menuToggle && navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+      menuToggle.focus();
+    }
   });
 
   // Establecer enlace activo

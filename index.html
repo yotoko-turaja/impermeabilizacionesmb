@@ -7,6 +7,13 @@
   <meta name="keywords" content="impermeabilización, piscinas, azoteas, depósitos, expertos">
   <meta name="google-site-verification" content="ynkiYweG7xC-jYLRUsqook6siYmMSWBqCWwi6yGStT0">
   <title>ImpermeabilizacionesMB - Expertos en Impermeabilización</title>
+  <link rel="canonical" href="https://impermeabilizacionmb.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="ImpermeabilizacionesMB - Expertos en Impermeabilización">
+  <meta property="og:description" content="Soluciones profesionales de impermeabilización de piscinas, azoteas y depósitos. Solicita tu presupuesto sin compromiso.">
+  <meta property="og:url" content="https://impermeabilizacionmb.com/">
+  <meta property="og:image" content="https://impermeabilizacionmb.com/img/logo.jpeg">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -17,10 +24,10 @@
         <img src="img/logo.jpeg" alt="ImpermeabilizacionesMB Logo" class="logo-img">
         <span>ImpermeabilizacionesMB</span>
       </a>
-      <button class="menu-toggle">☰</button>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Inicio</a></li>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-controls="primary-menu" aria-expanded="false">☰</button>
+      <nav aria-label="Navegación principal">
+        <ul id="primary-menu">
+          <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
           <li><a href="servicios.html">Servicios</a></li>
           <li><a href="trabajos.html">Trabajos</a></li>
           <li><a href="galeria.html">Galería</a></li>
@@ -40,10 +47,11 @@
         <span>Llama ahora y obtén tu presupuesto GRATIS en 5 minutos</span>
       </div>
       <a href="tel:+34601506850" class="cta-banner-button">Llamar Ahora</a>
-      <button class="cta-banner-close" onclick="document.getElementById('ctaBanner').classList.add('hidden')">✕</button>
+      <button class="cta-banner-close" type="button" aria-label="Cerrar aviso de presupuesto" onclick="document.getElementById('ctaBanner').classList.add('hidden')">✕</button>
     </div>
   </div>
 
+  <main id="contenido">
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="container">
@@ -70,7 +78,7 @@
         <div class="service-card service-featured" style="background: linear-gradient(135deg, #ff6b35 0%, #e55a24 100%); overflow: hidden;">
           <img src="img/azotea.webp" alt="Impermeabilización de Azoteas" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 15px; border-radius: 4px;">
           <h3>Impermeabilización de Azoteas</h3>
-          <p>Soluciones integral para azoteas y terrazas. Prevención de goteras y filtraciones garantizadas.</p>
+          <p>Soluciones integrales para azoteas y terrazas. Prevención de goteras y filtraciones garantizadas.</p>
           <a href="servicios.html#azoteas" class="btn" style="width: 100%; margin-top: auto;">Más Info</a>
         </div>
         <div class="service-card service-featured" style="background: linear-gradient(135deg, #00a86b 0%, #008c5a 100%); overflow: hidden;">
@@ -80,7 +88,8 @@
           <a href="servicios.html#depositos" class="btn" style="width: 100%; margin-top: auto;">Más Info</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <!-- TESTIMONIOS -->
   <section style="background-color: white;">
@@ -115,6 +124,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-content">
@@ -145,7 +156,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/34601506850?text=Hola%20ImpermeabilizacionesMB%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20vuestros%20servicios" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">💬</a>
+  <a href="https://wa.me/34601506850?text=Hola%20ImpermeabilizacionesMB%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20vuestros%20servicios" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp (se abre en otra pestaña)" title="Contactar por WhatsApp">💬</a>
 
   <script src="js/script.js"></script>
 </body>

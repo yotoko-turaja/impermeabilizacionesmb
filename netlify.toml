@@ -5,12 +5,6 @@
   publish = "."
   command = "echo 'Sitio estático listo'"
 
-# Redirects - Enviar errores 404 al index
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 # Headers personalizados
 [[headers]]
   for = "/*"
@@ -25,14 +19,14 @@
   for = "/css/*"
   [headers.values]
     Content-Type = "text/css; charset=utf-8"
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Headers para archivos JS
 [[headers]]
   for = "/js/*"
   [headers.values]
     Content-Type = "text/javascript; charset=utf-8"
-    Cache-Control = "public, max-age=31536000"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # Headers para sitemap.xml
 [[headers]]
