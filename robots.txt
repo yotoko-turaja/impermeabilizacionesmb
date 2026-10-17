@@ -6,4 +6,4 @@ Allow: /
 Disallow: /functions/
 
 # Sitemap
-Sitemap: https://impermeabilizacionesmb.com/sitemap.xml
+Sitemap: https://impermeabilizacionmb.com/sitemap.xml
